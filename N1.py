@@ -1,26 +1,4 @@
-"""
-Implementação do algoritmo de Subsequência Comum Máxima (LCS - Longest Common Subsequence)
-usando programação dinâmica com memoização.
-
-Este módulo fornece funções para encontrar a maior subsequência comum entre duas strings,
-tanto o tamanho quanto a própria subsequência.
-"""
-
 def lcs(s1: str, s2: str, m: int, n: int, memo: dict = None, contador: dict = None) -> int:
-    """
-    Encontra o tamanho da maior subsequência comum entre duas strings usando recursão com memoização.
-    
-    Args:
-        s1 (str): Primeira string
-        s2 (str): Segunda string
-        m (int): Tamanho atual da primeira string
-        n (int): Tamanho atual da segunda string
-        memo (dict, optional): Dicionário para armazenar resultados já calculados
-        contador (dict, optional): Dicionário para contar chamadas recursivas
-        
-    Returns:
-        int: Tamanho da maior subsequência comum
-    """
     if memo is None:
         memo = {}
     if contador is None:
@@ -46,16 +24,6 @@ def lcs(s1: str, s2: str, m: int, n: int, memo: dict = None, contador: dict = No
     return resultado
 
 def encontrar_subsequencia(s1: str, s2: str) -> str:
-    """
-    Encontra a maior subsequência comum entre duas strings.
-    
-    Args:
-        s1 (str): Primeira string
-        s2 (str): Segunda string
-        
-    Returns:
-        str: A maior subsequência comum
-    """
     m, n = len(s1), len(s2)
     # Cria uma matriz para armazenar os resultados intermediários
     dp = [[0] * (n + 1) for _ in range(m + 1)]
@@ -85,16 +53,6 @@ def encontrar_subsequencia(s1: str, s2: str) -> str:
     return ''.join(reversed(subsequencia))
 
 def maior_subsequencia_comum(s1: str, s2: str) -> tuple[int, str, dict]:
-    """
-    Encontra o tamanho e a maior subsequência comum entre duas strings.
-    
-    Args:
-        s1 (str): Primeira string
-        s2 (str): Segunda string
-        
-    Returns:
-        tuple[int, str, dict]: Tupla contendo o tamanho, a subsequência comum e o contador de chamadas
-    """
     contador = {}
     tamanho = lcs(s1, s2, len(s1), len(s2), contador=contador)
     subsequencia = encontrar_subsequencia(s1, s2)
