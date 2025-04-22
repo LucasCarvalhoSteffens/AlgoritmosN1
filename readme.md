@@ -1,3 +1,7 @@
+#Alunos: Alberto Zilio
+         Lucas Daniel Gomes
+         Lucas de Carvalho Steffens
+         Roni Pereira
 # Implementação da Subsequência Comum Máxima (LCS)
 
 ## Problema Escolhido
